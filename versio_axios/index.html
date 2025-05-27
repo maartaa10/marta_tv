@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Series Viewer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="tv-box">
+            <div class="main-screen">
+                <div class="blackout-window"></div>
+                <div class="screen off-screen" id="screen"></div>
+            </div>
+        </div>
+        <div class="tv-stand"></div>
+        <div class="remote">
+            <div class="powerOn remote-btn cur-pointer"></div>
+            <div class="powerOff remote-btn cur-pointer"></div>
+            <div class="refresh remote-btn cur-pointer"></div>
+            <div class="clear"></div>
+            <div class="text-center">
+                <ul class="numberBtn">
+                    <li data-id="ch1">1</li>
+                    <li data-id="ch2">2</li>
+                    <li data-id="ch3">3</li>
+                    <li data-id="ch4">4</li>
+                    <li data-id="ch5">5</li>
+                    <li data-id="ch6">6</li>
+                    <li data-id="ch7">7</li>
+                    <li data-id="ch8">8</li>
+                    <li data-id="ch9">9</li>
+                    <li data-id="ch0">0</li>
+                </ul>
+            </div>
+            <div class="vol-ch-control text-center">
+                <ul>
+                    <li id="volPlus">Vol+</li>
+                    <li id="volMinus">Vol-</li>
+                    <li id="chPlus">ch+</li>
+                    <li id="chMinus">ch-</li>
+                </ul>
+            </div>
+            <div class="text-center">
+                <button id="seriesBtn" class="remote-btn cur-pointer">S</button>
+                <button id="actorsBtn" class="remote-btn cur-pointer">A</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

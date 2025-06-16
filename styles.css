@@ -123,8 +123,10 @@ li {
   height: 300px;
   border-radius: 5px;
   background: #333;
-  margin: -350px 0 0 50px;
+  margin: 30px auto 0; /* En lugar de margen negativo */
   padding: 10px;
+  position: relative; /* Quitamos el fixed o cualquier valor que lo saque del flujo */
+  z-index: 5;
 }
 
 .remote-btn {
@@ -283,4 +285,238 @@ li {
   color: #fff;
   text-align: center;
   font-size: 10px;
+}
+/* MEDIA QUERIES SOLO PARA RESPONSIVE SIN TOCAR EL DISEÑO ORIGINAL */
+
+@media (max-width: 900px) {
+  /* Reducir tamaño del tv-box para pantallas más pequeñas */
+  .tv-box {
+    width: 600px;
+    height: 338px;
+    margin: 40px auto 0;
+    padding: 10px;
+  }
+
+  .blackout-window {
+    width: 450px;
+    height: 225px;
+    top: 8px;
+    left: 15px;
+  }
+
+  #screen {
+    top: 4%;
+    left: 2.5%;
+    width: 95%;
+    height: 90%;
+  }
+
+  .remote {
+    width: 100px;
+    height: 250px;
+    margin: -300px 0 0 30px;
+    padding: 8px;
+  }
+
+  .numberBtn li {
+    width: 14px;
+    height: 14px;
+    margin: 4px;
+    border-width: 1.5px;
+    font-size: 11px;
+  }
+
+  .vol-ch-control li {
+    width: 25px;
+    height: 16px;
+    font-size: 9px;
+    margin: 4px;
+  }
+
+  #seriesBtn, #actorsBtn {
+    width: 45px;
+    height: 16px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Más reducción para móviles */
+  .tv-box {
+    width: 350px;
+    height: 197px;
+    margin: 20px auto 0;
+    padding: 8px;
+  }
+
+  .blackout-window {
+    width: 280px;
+    height: 150px;
+    top: 6px;
+    left: 10px;
+  }
+
+  #screen {
+    top: 4%;
+    left: 2.5%;
+    width: 95%;
+    height: 90%;
+  }
+
+  .remote {
+    width: 80px;
+    height: 200px;
+    margin: -220px 0 0 15px;
+    padding: 6px;
+  }
+
+  .numberBtn li {
+    width: 12px;
+    height: 12px;
+    margin: 3px;
+    border-width: 1.2px;
+    font-size: 9px;
+  }
+
+  .vol-ch-control li {
+    width: 20px;
+    height: 14px;
+    font-size: 8px;
+    margin: 3px;
+  }
+
+  #seriesBtn, #actorsBtn {
+    width: 40px;
+    height: 14px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Ajustes para pantallas muy pequeñas */
+  .tv-box {
+    width: 280px;
+    height: 160px;
+    margin: 15px auto 0;
+    padding: 6px;
+  }
+
+  .blackout-window {
+    width: 220px;
+    height: 120px;
+    top: 5px;
+    left: 8px;
+  }
+
+  #screen {
+    top: 4%;
+    left: 2.5%;
+    width: 95%;
+    height: 90%;
+  }
+
+  .remote {
+    width: 70px;
+    height: 180px;
+    margin: -180px 0 0 10px;
+    padding: 5px;
+  }
+
+  .numberBtn li {
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    border-width: 1px;
+    font-size: 8px;
+  }
+
+  .vol-ch-control li {
+    width: 18px;
+    height: 12px;
+    font-size: 7px;
+    margin: 2px;
+  }
+
+  #seriesBtn, #actorsBtn {
+    width: 35px;
+    height: 12px;
+    font-size: 7px;
+  }
+}
+
+/* En móviles pequeños: asegurar que el mando se muestre correctamente por delante */
+@media (max-width: 600px) {
+  /* Aumentar la altura de la tele para mejorar visibilidad */
+  .tv-box {
+    width: 350px;
+    height: 300px; /* antes: 197px */
+    margin: 20px auto 0;
+    padding: 8px;
+  }
+
+  .blackout-window {
+    width: 280px;
+    height: 220px; /* ajustado para que encaje con la nueva altura */
+    top: 6px;
+    left: 10px;
+  }
+
+  #screen {
+    top: 3%;
+    left: 2.5%;
+    width: 95%;
+    height: 94%; /* aprovecha más el nuevo alto */
+  }
+
+  .remote {
+    margin: -320px 0 0 10px; /* para que no solape con la pantalla más grande */
+  }
+}
+/* Opcional: mejorar visibilidad del mando en pantallas muy pequeñas */
+@media (max-width: 400px) {
+  .remote {
+    position: fixed; /* Fija el mando para que no se esconda al hacer scroll */
+    top: auto;
+    bottom: 20px;
+    left: 10px;
+    z-index: 10;
+  }
+}
+@media (max-width: 452px) and (max-height: 595px) {
+  .remote {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Asegura que el mando no se superponga a la tele */
+  }
+}
+@media (max-width: 463px) {
+  .remote {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+}
+
+@media (max-width: 554px) {
+  .remote {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+}
+
+@media (max-width: 553px) {
+  .remote {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
 }
